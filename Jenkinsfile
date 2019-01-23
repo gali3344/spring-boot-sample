@@ -12,6 +12,11 @@ pipeline {
         sh 'sudo docker-compose run test'
       }
     }
+    stage('build') {
+      steps {
+        sh 'docker-compose run install'
+      }
+    }
   }
   post {
     always {
