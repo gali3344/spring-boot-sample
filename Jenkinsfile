@@ -9,7 +9,7 @@ pipeline {
     }
     stage('deploy') {
       steps {
-        sh 'makefile deploy-production-local'
+        sh 'make deploy-production-local'
       }
     }
   }
