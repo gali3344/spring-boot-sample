@@ -1,16 +1,16 @@
 pipeline {
   agent any
   stages {
-    stage('checkout project') {
+    stage('run test') {
       steps {
-        checkout scm
+        sh 'docker-compose run test'
       }
     }
   }
   post {
     always {
       echo 'I will always say Hello again!'
-      sh "docker-compose run clean"
+      sh 'docker-compose run clean'
 
     }
 
