@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('run test') {
+    stage('ls') {
       steps {
-        sh 'docker-compose run test'
+        sh 'ls'
       }
     }
   }
