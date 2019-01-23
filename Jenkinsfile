@@ -7,6 +7,11 @@ pipeline {
 '''
       }
     }
+    stage('test') {
+      steps {
+        sh 'sudo docker-compose run test'
+      }
+    }
   }
   post {
     always {
