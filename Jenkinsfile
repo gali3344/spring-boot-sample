@@ -9,7 +9,10 @@ pipeline {
     }
     stage('deploy') {
       steps {
-        sh 'make deploy-production-local'
+        sh '''docker-compose run package
+make build-docker-prod-image
+make deploy-production-local
+'''
       }
     }
   }
